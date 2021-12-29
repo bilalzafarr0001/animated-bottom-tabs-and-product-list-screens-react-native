@@ -20,7 +20,7 @@ const colors = [Colors.red, Colors.green, Colors.yellow, Colors.black];
 const ColorsSelector = () => {
   const [selected, setSelected] = useState(0); //index
   return (
-    <View style={styles.container}>
+    <View style={[styles.container]}>
       <Text>Colors</Text>
       <View style={{flexDirection: 'row', marginVertical: 5}}>
         {colors.map((_, i) => (
@@ -43,11 +43,9 @@ const ColorsSelector = () => {
 
 const SizeSelector = () => {
   return (
-    <View style={styles.container}>
-      <Text>Size</Text>
-      <Text style={{fontWeight: 'bold', fontSize: 20, marginVertical: 5}}>
-        12 cm
-      </Text>
+    <View style={[styles.container, {flexDirection: 'row', marginTop: 30}]}>
+      <Text style={{fontWeight: 'bold', fontSize: 20}}>Size - </Text>
+      <Text style={{fontWeight: 'bold', fontSize: 20}}>12 cm</Text>
     </View>
   );
 };
@@ -195,7 +193,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,
-    paddingTop: 80,
+    paddingTop: 10,
   },
   bigText: {
     fontSize: 28,
@@ -212,7 +210,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     position: 'absolute',
     zIndex: 999,
-    top: 60,
+    top: 20,
     alignSelf: 'flex-end',
   },
   colorBtn: {
